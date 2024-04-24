@@ -1,0 +1,21 @@
+.chatbot-container img {
+  width: 100px; /* Adjust the size as needed */
+  height: auto;
+  position: fixed;
+  bottom: 80px; /* Position above the Capstone store line */
+  left: 30px; /* Move to the left side */
+  z-index: 100; /* Ensure it's above other content */
+  cursor: pointer; /* Indicating it's clickable */
+}
+
+.chatbox {
+  position: fixed;
+  bottom: 130px; /* Position above the avatar image */
+  left: 20px; /* Align with the avatar image */
+  width: 300px;
+  padding: 20px;
+  background: rgba(47, 79, 79, 0.9); /* Semi-transparent grey background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure chatbox is above other content, including the avatar */
+}
