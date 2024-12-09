@@ -64,7 +64,14 @@ function Home() {
           <div>
             <img src="/images/sandal.jpeg" alt="Comfortable Sandals" />
           </div>
-          {/* Add more products as needed */}
+          <div>
+            <img src="/images/soccer_jersey.jpeg" alt="Soccer Jersey" />{" "}
+            {/* New Image */}
+          </div>
+          <div>
+            <img src="/images/baseball_hat.jpeg" alt="Baseball Hat" />{" "}
+            {/* New Image */}
+          </div>
         </Slider>
       </div>
     </div>

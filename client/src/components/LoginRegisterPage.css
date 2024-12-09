@@ -60,6 +60,16 @@
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.6);
 }
 
+.feedback-message {
+  background-color: rgba(255, 0, 0, 0.1); /* Light red background */
+  color: red;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid red;
+  border-radius: 5px;
+  text-align: center;
+}
+
 /* Optional: If you want to apply a background color animation */
 @keyframes colorCycle {
   0%,

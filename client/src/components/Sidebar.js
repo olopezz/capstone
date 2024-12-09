@@ -24,6 +24,10 @@ function Sidebar({ isOpen, toggleSidebar }) {
       <Link to="/products" onClick={toggleSidebar} style={linkStyle}>
         Products
       </Link>
+      <Link to="/community" onClick={toggleSidebar} style={linkStyle}>
+        Community
+      </Link>{" "}
+      {/* Add Community Page link here */}
       <Link to="/admin" onClick={toggleSidebar} style={linkStyle}>
         Admin
       </Link>
@@ -31,6 +35,9 @@ function Sidebar({ isOpen, toggleSidebar }) {
         Login/Register
       </Link>
       {/* Add more links or adjust as needed */}
+      <button onClick={handleLogout} className="logout-button">
+        Logout
+      </button>
     </div>
   );
 }
@@ -41,6 +48,14 @@ const linkStyle = {
   color: "white",
   display: "block",
   transition: "0.3s",
+};
+
+const handleLogout = () => {
+  // Clear the token from localStorage
+  localStorage.removeItem("token");
+
+  // Redirect to the login page
+  window.location.href = "/login";
 };
 
 export default Sidebar;

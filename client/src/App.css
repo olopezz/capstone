@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+.logout-button {
+  background: linear-gradient(45deg, #6ee7b7, #3b82f6);
+  color: black;
+  border: none;
+  padding: 10px 15px; /* Adjusted padding */
+  margin: 10px 15px; /* Matches the left alignment of links */
+  border-radius: 25px;
+  cursor: pointer;
+  display: block; /* Ensures it behaves like a block-level element */
+  width: calc(100% - 30px); /* Full width minus margin for proper alignment */
+  text-align: center; /* Center the text */
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.logout-button:hover {
+  background: linear-gradient(45deg, #3b82f6, #6ee7b7);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import ProductList from "./components/ProductList";
 import AdminPanel from "./components/AdminPanel";
 import LoginRegisterPage from "./components/LoginRegisterPage";
+import CommunityPage from "./components/CommunityPage"; // Import the Community page
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CartModal from "./components/CartModal";
@@ -13,6 +14,7 @@ import Chatbot from "./components/Chatbot";
 function App() {
   const [cart, setCart] = useState([]);
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null); // Add selected product state
 
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -36,7 +38,7 @@ function App() {
       setCart(
         cart.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + amount }
+            ? { ...item, quantity: product.quantity + amount }
             : item
         )
       );
@@ -54,6 +56,7 @@ function App() {
   return (
     <Router>
       <Chatbot /> {/* This will render the Chatbot on all pages */}
+      <Header /> {/* Add Header for navigation */}
       <Routes>
         <Route
           path="/"
@@ -67,7 +70,10 @@ function App() {
           path="/products"
           element={
             <PageWrapper>
-              <ProductList addToCart={addToCart} />
+              <ProductList
+                addToCart={addToCart}
+                setSelectedProduct={setSelectedProduct}
+              />
             </PageWrapper>
           }
         />
@@ -87,7 +93,15 @@ function App() {
             </PageWrapper>
           }
         />
-        {/* ... other routes ... */}
+        <Route
+          path="/community"
+          element={
+            <PageWrapper>
+              <CommunityPage selectedProduct={selectedProduct} />
+            </PageWrapper>
+          }
+        />
+        {/* Add additional routes as necessary */}
       </Routes>
       {isCartVisible && (
         <CartModal
